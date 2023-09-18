@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="gramola.css">
+        <title>GRAMOLA / AESCRIBANO</title>
+    </head>
+    <body>
+        <header>
+            <img id="icono" src="../assets/img/icono.PNG" alt="icono">
+        </header>
+        <div id="casete">
+            <img class="Slider" src="../assets/img/casete_rock.png">
+            <img class="Slider" src="../assets/img/casete_pop.png">
+            <img class="Slider" src="../assets/img/casete_tecno.png">
+            <img class="Slider" src="../assets/img/casete_rap.png">
+            <button class="w3-button w3-display-left" id="botI" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-display-right" id="botD" onclick="plusDivs(+1)">&#10095;</button>
+            <script>
+                var slideIndex = 1;
+                showDivs(slideIndex);
+
+                function plusDivs(n) {
+                showDivs(slideIndex += n);
+                }
+
+                function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("Slider");
+                if (n > x.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = x.length} ;
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[slideIndex-1].style.display = "block";
+                }
+            </script>
+        </div>
+        <div id="div_2">
+            <div id="Llista"></div>
+            <div id="Caratula"></div>
+        </div>
+        <footer>
+            <audio controls autoplay id="audio_contr">
+            <source src="" type="audio/ogg">
+            <source src="" type="audio/mpeg">
+          </audio>
+        </footer>
+    </body>
+</html>

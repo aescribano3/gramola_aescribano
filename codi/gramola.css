@@ -1,0 +1,74 @@
+body{
+    background-image: url(../assets/img/fondo.png);
+    background-repeat: no-repeat;
+    background-color: #FFF000;
+}
+footer{
+    width: 100%;
+    height: 225px;
+    background-image: url(../assets/img/fondo_footer.png);
+    position: fixed;
+    bottom: 0px;
+}
+.Slider{
+    display: none;
+    width: 300px;
+    margin-left: 660px;
+    
+}
+#botI{
+    position: absolute;
+    left: 400px;
+    top: 300px;
+}
+#botD{
+    position: absolute;
+    right: 400px;
+    top: 300px;
+}
+header{
+    height: 150px;
+}
+#Llista{
+    width: 500px;
+    height: 475px;
+    border-color: black;
+    border-radius: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+#Caratula{
+    width: 800px;
+    height: 475px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 290px;
+    position: absolute;
+}
+#div_2{
+    display: inline-block;
+}
+#audio_contr{
+    position: absolute;
+    display: inline-block;
+    bottom: 20px;
+    left: 650px;
+}
+#icono{
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    left: 130px;
+}
+#casete{
+    display: inline-block;
+    width: 100%;
+    height: 275px;
+}
