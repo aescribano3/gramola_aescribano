@@ -3,50 +3,53 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icono" type="image/png" href="../assets/img/icono.PNG">
+        <!--Link de l'estil css-->
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="gramola.css">
         <title>GRAMOLA / AESCRIBANO</title>
     </head>
     <body>
         <header>
+            <!--Icone de la pagina-->
             <img id="icono" src="../assets/img/icono.PNG" alt="icono">
         </header>
         <div id="casete">
+            <!--Slider per les playlist-->
             <img class="Slider" src="../assets/img/casete_rock.png">
             <img class="Slider" src="../assets/img/casete_pop.png">
             <img class="Slider" src="../assets/img/casete_tecno.png">
-            <img class="Slider" src="../assets/img/casete_rap.png">
+            <img class="Slider" src="../assets/img/casete_classic.png">
             <button class="w3-button w3-display-left" id="botI" onclick="plusDivs(-1)">&#10094;</button>
             <button class="w3-button w3-display-right" id="botD" onclick="plusDivs(+1)">&#10095;</button>
-            <script>
-                var slideIndex = 1;
-                showDivs(slideIndex);
-
-                function plusDivs(n) {
-                showDivs(slideIndex += n);
-                }
-
-                function showDivs(n) {
-                var i;
-                var x = document.getElementsByClassName("Slider");
-                if (n > x.length) {slideIndex = 1}
-                if (n < 1) {slideIndex = x.length} ;
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
-                }
-                x[slideIndex-1].style.display = "block";
-                }
-            </script>
         </div>
         <div id="div_2">
-            <div id="Llista"></div>
-            <div id="Caratula"></div>
+            <!--Creació del llistat de cançons y caratula-->
+            <div id="Llista">
+                <ul>
+                    <li>Canço 1</li>
+                    <li>Canço 2</li>
+                    <li>Canço 3</li>
+                    <li>Canço 4</li>
+                </ul>
+            </div>
+            <div id="Caratula">
+                <img id="cover" src="../assets/img/cover_reach_out.PNG" alt="Cover">
+                <p id="cover_txt" >Reach_Out</p>
+            </div>
         </div>
         <footer>
-            <audio controls autoplay id="audio_contr">
-            <source src="" type="audio/ogg">
-            <source src="" type="audio/mpeg">
+            <!--Creació del control d'audio-->
+            <img id="random" src="../assets/img/random.png">
+            <img id="backward" src="../assets/img/backward.png">
+            <img id="play" src="../assets/img/play.png">
+            <img id="forward" src="../assets/img/forward.png">
+            <img id="stop" src="../assets/img/stop.png">
+            <audio id="myAudio" autoplay>
+                <source src="../assets/music/TECNO Now_!!!_-_DJ_Smallest.mp3" type="audio/mp3">
+            </audio>
           </audio>
+          <script src="gramola.js"></script>
         </footer>
     </body>
 </html>
