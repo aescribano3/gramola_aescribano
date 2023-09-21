@@ -1,3 +1,8 @@
+<?php
+    $data = file_get_contents("gramola.json");
+    $playlist = json_decode($data, true);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,8 +39,8 @@
                 </ul>
             </div>
             <div id="Caratula">
-                <img id="cover" src="../assets/img/cover_reach_out.PNG" alt="Cover">
-                <p id="cover_txt" >Reach_Out</p>
+                <img id="cover" src="../assets/img/cover_now.PNG" alt="Cover">
+                <p id="cover_txt" >Now !!! / DJ Smallest</p>
             </div>
         </div>
         <footer>
@@ -45,11 +50,14 @@
             <img id="play" src="../assets/img/play.png">
             <img id="forward" src="../assets/img/forward.png">
             <img id="stop" src="../assets/img/stop.png">
-            <audio id="myAudio" autoplay>
+            <audio id="audio" ontimeupdate="updateTimeDisplay(this)">
                 <source src="../assets/music/TECNO Now_!!!_-_DJ_Smallest.mp3" type="audio/mp3">
             </audio>
-          </audio>
-          <script src="gramola.js"></script>
+            <div id="progress-bar">
+                <div id="progress" id="progress"></div>
+            </div>
+            <div id="duration">0:00 / 0:00</div>
+            <script src="gramola.js"></script>
         </footer>
     </body>
 </html>

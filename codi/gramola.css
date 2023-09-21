@@ -36,9 +36,11 @@ header{
     border-radius: 2px;
     border-style: solid;
     border-radius: 5px;
+    border-width: 5px;
     margin-left: 30px;
     margin-bottom: 20px;
     display: inline-block;
+    background-color: #ffff77;
 }
 #Llista > ul > li{
     font-size: x-large;
@@ -49,11 +51,13 @@ header{
     border-color: black;
     border-style: solid;
     border-radius: 10px;
+    border-width: 5px;
     display: inline-block;
     margin-bottom: 20px;
     margin-right: 20px;
     margin-left: 340px;
     position: absolute;
+    background-color: #ffff77;
 }
 #div_2{
     display: inline-block;
@@ -73,42 +77,42 @@ header{
     width: 40px;
     height: 40px;
     position: absolute;
-    bottom: 20px;
+    bottom: 40px;
     left: 650px;
 }
 #backward{
     width: 40px;
     height: 40px;
     position: absolute;
-    bottom: 20px;
+    bottom: 40px;
     left: 700px;
 }
 #play{
     width: 40px;
     height: 40px;
     position: absolute;
-    bottom: 20px;
+    bottom: 40px;
     left: 750px;
 }
 #pause{
     width: 40px;
     height: 40px;
     position: absolute;
-    bottom: 20px;
+    bottom: 40px;
     left: 750px;
 }
 #forward{
     width: 40px;
     height: 40px;
     position: absolute;
-    bottom: 20px;
+    bottom: 40px;
     left: 800px;
 }
 #stop{
     width: 40px;
     height: 40px;
     position: absolute;
-    bottom: 20px;
+    bottom: 40px;
     left: 850px;
 }
 #cover{
@@ -117,4 +121,28 @@ header{
 }
 #cover_txt{
     text-align: center;
+    font-size: medium;
+}
+#progress-bar {
+    width: 60%;
+    background-color: #202020;
+    height: 10px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 20px;
+    left: 300px;
+}
+#progress{
+    width: 0;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+#duration{
+    position: absolute;
+    bottom: 14px;
+    left: 1325px;
 }
