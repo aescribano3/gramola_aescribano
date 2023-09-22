@@ -1,0 +1,23 @@
+{
+    "nom": "Rock",
+    "cançons": [
+      {
+        "title": "Reach_Out",
+        "artist": "Jason_Brock",
+        "url": "../assets/music/ROCK Reach_Out_-_Jason_Brock.mp3",
+        "cover": "../assets/img/cover_reach_out.PNG"
+      },
+      {
+        "title": "Scene_5",
+        "artist": "WE_ARE_FM",
+        "url": "../assets/music/ROCK Scene_5_-_WE_ARE_FM.mp3",
+        "cover": "../assets/img/cover_scene5.PNG"
+      },
+      {
+        "title": "Wings",
+        "artist": "Studebakes_Blacksmith_Shop",
+        "url": "../assets/music/ROCK Wings_-_Studebakers_Blacksmith_Shop.mp3",
+        "cover": "../assets/img/cover_wings.PNG"
+      }
+    ]
+  }

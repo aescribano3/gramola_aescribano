@@ -1,0 +1,23 @@
+{
+    "nom": "Pop",
+    "cançons": [
+      {
+        "title": "Constellate",
+        "artist": "Fleurie",
+        "url": "../assets/music/POP Constellate_-_Fleurie.mp3",
+        "cover": "../assets/img/cover_constellate.PNG"
+      },
+      {
+        "title": "Oh,_Conspiracy",
+        "artist": "Flat_People",
+        "url": "../assets/music/POP Oh,_Conspiracy_-_Flat_People.mp3",
+        "cover": "../assets/img/cover_conspiracy.PNG"
+      },
+      {
+        "title": "Skydiving_(feat._Jasmine_Kara)",
+        "artist": "Jonay",
+        "url": "../assets/music/POP Skydiving_(feat._Jasmine_Kara)_-_Jonay.mp3",
+        "cover": "../assets/img/cover_skydiving.PNG"
+      }
+    ]
+  }

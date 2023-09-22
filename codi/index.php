@@ -1,6 +1,14 @@
 <?php
-    $data = file_get_contents("gramola.json");
-    $playlist = json_decode($data, true);
+$files = glob("*.json");
+
+$playlistId = 0;
+if (isset($_GET["playlist_id"])) {
+    $playlistId = (int)$_GET["playlist_id"];
+}
+
+$data = file_get_contents($files[$playlistId]);
+$playlist = json_decode($data, true);
+$cançons = $playlist["cançons"];
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +16,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icono" type="image/png" href="../assets/img/icono.PNG">
+        <link rel="icon" type="image/png" href="../assets/img/icono.PNG">
         <!--Link de l'estil css-->
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="gramola.css">
@@ -20,28 +28,31 @@
             <img id="icono" src="../assets/img/icono.PNG" alt="icono">
         </header>
         <div id="casete">
-            <!--Slider per les playlist-->
-            <img class="Slider" src="../assets/img/casete_rock.png">
-            <img class="Slider" src="../assets/img/casete_pop.png">
-            <img class="Slider" src="../assets/img/casete_tecno.png">
-            <img class="Slider" src="../assets/img/casete_classic.png">
-            <button class="w3-button w3-display-left" id="botI" onclick="plusDivs(-1)">&#10094;</button>
-            <button class="w3-button w3-display-right" id="botD" onclick="plusDivs(+1)">&#10095;</button>
+        <!-- Afegeix un enllaç a les imatges -->
+        <a href="index.php?playlist_id=0"><img id='Classic' class="Slider" src="../assets/img/casete_classic.png"></a>
+        <a href="index.php?playlist_id=1"><img id='Pop' class="Slider" src="../assets/img/casete_pop.png"></a>
+        <a href="index.php?playlist_id=2"><img id='Rock' class="Slider" src="../assets/img/casete_rock.png"></a>
+        <a href="index.php?playlist_id=3"><img id='Tecno' class="Slider" src="../assets/img/casete_tecno.png"></a>
+        <button class="w3-button w3-display-left" id="botI" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-display-right" id="botD" onclick="plusDivs(+1)">&#10095;</button>
+    </div>
+    <div id="div_2">
+        <!-- Llista de reproducció-->
+        <div id="Llista">
+            <ul>
+            <?php
+                // Genera la lista de canciones dinámicamente
+                foreach ($cançons as $canço) {
+                    // Agrega un evento de clic para reproducir la canción y pasar los datos de la carátula y el título
+                    echo "<li onclick=\"playAudioLlista('{$canço['url']}', '{$canço['title']}', '{$canço['cover']}', '{$canço['artist']}')\">{$canço['title']}</li>";
+                }                
+                ?>
+            </ul>
         </div>
-        <div id="div_2">
-            <!--Creació del llistat de cançons y caratula-->
-            <div id="Llista">
-                <ul>
-                    <li>Canço 1</li>
-                    <li>Canço 2</li>
-                    <li>Canço 3</li>
-                    <li>Canço 4</li>
-                </ul>
-            </div>
-            <div id="Caratula">
-                <img id="cover" src="../assets/img/cover_now.PNG" alt="Cover">
-                <p id="cover_txt" >Now !!! / DJ Smallest</p>
-            </div>
+        <div id="Caratula">
+            <img id="cover" src="" alt="">
+            <p id="cover_txt"></p>
+        </div>
         </div>
         <footer>
             <!--Creació del control d'audio-->
@@ -51,10 +62,10 @@
             <img id="forward" src="../assets/img/forward.png">
             <img id="stop" src="../assets/img/stop.png">
             <audio id="audio" ontimeupdate="updateTimeDisplay(this)">
-                <source src="../assets/music/TECNO Now_!!!_-_DJ_Smallest.mp3" type="audio/mp3">
+                <source src="" type="audio/mp3">
             </audio>
             <div id="progress-bar">
-                <div id="progress" id="progress"></div>
+                <div id="progress"></div>
             </div>
             <div id="duration">0:00 / 0:00</div>
             <script src="gramola.js"></script>

@@ -45,20 +45,23 @@ function pauseAudio(){
 audio = document.getElementById("audio");
 
 //Crida al play
-document.getElementById('play').addEventListener('click', playAudio, true);
+document.getElementById('play').addEventListener('click', pauseAudio, true);
 
 //Crida al stop
 document.getElementById("stop").addEventListener('click', stopAudio, true);
 
-//Mou la barra de temps de la musica
+//Barra de progres
 audio.addEventListener('timeupdate', updateProgress);
+
+//Mou la barra de temps de la musica
 function updateProgress() {
     const duration = audio.duration;
     const currentTime = audio.currentTime;
     const progressWidth = (currentTime / duration) * 100;
-    progress.style.width = `${progressWidth}%`;
+    document.getElementById('progress').style.width = `${progressWidth}%`;
 }
 
+//Durada de la canço
 function updateTimeDisplay(player) {
     var currentTime = player.currentTime;
     var duration = player.duration;
@@ -73,4 +76,21 @@ function updateTimeDisplay(player) {
     var durationTimeString = durationMinutes + ":" + (durationSeconds < 10 ? "0" : "") + durationSeconds;
 
     document.getElementById('duration').innerHTML = currentTimeString + ' / ' + durationTimeString;
+}
+
+// Variables para la carátula y el título
+var caratula = document.getElementById("cover");
+var cover_txt = document.getElementById("cover_txt");
+
+// Función para reproducir una canción en el elemento de audio y actualizar la carátula y el título
+function playAudioLlista(url, title, cover, artist) {
+    var audio = document.getElementById("audio");
+    audio.src = url;
+    audio.load();
+    audio.play();
+    document.getElementById('play').src="../assets/img/pause.png";
+
+    // Actualiza la carátula y el título
+    caratula.src = cover;
+    cover_txt.textContent = title + " / " + artist;
 }

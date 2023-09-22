@@ -1,0 +1,23 @@
+{
+    "nom": "Tecno",
+    "cançons": [
+      {
+        "title": "Aquanova",
+        "artist": "nexus",
+        "url": "../assets/music/TECNO Aquanova_-_nexus.mp3",
+        "cover": "../assets/img/cover_aquanova.PNG"
+      },
+      {
+        "title": "Now_!!!",
+        "artist": "DJ_Smallest",
+        "url": "../assets/music/TECNO Now_!!!_-_DJ_Smallest.mp3",
+        "cover": "../assets/img/cover_now.PNG"
+      },
+      {
+        "title": "White_Collar_Criminals - Broken_hearted",
+        "artist": "carmin.d",
+        "url": "../assets/music/TECNO White_Collar_Criminals_-_Broken_hearted_-_carmin.d.mp3",
+        "cover": "../assets/img/cover_white_collar.PNG"
+      }
+    ]
+  }
