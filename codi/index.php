@@ -41,16 +41,22 @@ $cançons = $playlist["cançons"];
         <div id="Llista">
             <ul>
             <?php
-                // Genera la lista de canciones dinámicamente
+                // Genera la llista de cançons
                 foreach ($cançons as $canço) {
-                    // Agrega un evento de clic para reproducir la canción y pasar los datos de la carátula y el título
-                    echo "<li onclick=\"playAudioLlista('{$canço['url']}', '{$canço['title']}', '{$canço['cover']}', '{$canço['artist']}')\">{$canço['title']}</li>";
-                }                
+                    //Afegeix un onclick per la url, titol, cover y artista
+                    echo "<li onclick=\"playAudioLlista(
+                        '{$canço['url']}',
+                        '{$canço['title']}',
+                        '{$canço['cover']}',
+                        '{$canço['artist']}')\">
+                        {$canço['title']}
+                        </li>";
+                }
                 ?>
             </ul>
         </div>
         <div id="Caratula">
-            <img id="cover" src="" alt="">
+            <img id="cover" src="../assets/img/icono.PNG" alt="">
             <p id="cover_txt"></p>
         </div>
         </div>

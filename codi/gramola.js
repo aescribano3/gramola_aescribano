@@ -44,11 +44,35 @@ function pauseAudio(){
 }
 audio = document.getElementById("audio");
 
+//Activa la opció de aeatori
+function randomAudio(){
+
+}
+
+//Avança a la seguent canço
+function backwardAudio(){
+
+}
+
+//Retrocedir una canço
+function forwardAudio(){
+    
+}
+
 //Crida al play
 document.getElementById('play').addEventListener('click', pauseAudio, true);
 
 //Crida al stop
 document.getElementById("stop").addEventListener('click', stopAudio, true);
+
+//Crida al random
+document.getElementById("random").addEventListener('click', randomAudio, true);
+
+//Crida al backward
+document.getElementById("backward").addEventListener('click', backwardAudio, true);
+
+//Crida al forward
+document.getElementById("forward").addEventListener('click', forwardAudio, true);
 
 //Barra de progres
 audio.addEventListener('timeupdate', updateProgress);
@@ -79,18 +103,17 @@ function updateTimeDisplay(player) {
 }
 
 // Variables para la carátula y el título
-var caratula = document.getElementById("cover");
+var cover_img = document.getElementById("cover");
 var cover_txt = document.getElementById("cover_txt");
 
 // Función para reproducir una canción en el elemento de audio y actualizar la carátula y el título
 function playAudioLlista(url, title, cover, artist) {
     var audio = document.getElementById("audio");
     audio.src = url;
-    audio.load();
     audio.play();
     document.getElementById('play').src="../assets/img/pause.png";
 
     // Actualiza la carátula y el título
-    caratula.src = cover;
+    cover_img.src = cover;
     cover_txt.textContent = title + " / " + artist;
 }
