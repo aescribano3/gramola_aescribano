@@ -48,6 +48,7 @@ header{
 }
 #Llista > ul > li{
     font-size: x-large;
+    line-height: 40px;
 }
 #Caratula{
     width: 690px;
@@ -151,3 +152,108 @@ header{
     bottom: 14px;
     left: 1325px;
 }
+form{
+    position: absolute;
+    top: 50px;
+    right: 600px;
+}
+input{
+    margin-right: 10px;
+}
+.equalizer {
+    display: none;
+    margin: calc(50vh - 12px) auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    position: absolute;
+    margin-left: 60px;
+    margin-top: 120px;
+    height: 96px;
+    width: 120px;
+  }
+  
+  .equalizer__bar {
+    flex-grow: 0;
+    height: 100%;
+    background-color: #000000;
+    animation-name: pulse;
+    animation-iteration-count: infinite;
+    transform-origin: center bottom;
+    bottom: 0;
+    width: 36px;
+      margin-left: 5px;
+  }
+  
+  .equalizer__bar:nth-child(1) {
+    animation-duration: 1.25s; 
+  }
+  
+  .equalizer__bar:nth-child(2) {
+    animation-delay: -0.75s;
+    animation-duration: 1.375s; 
+  }
+  
+  .equalizer__bar:nth-child(3) {
+    animation-delay: -1s;
+    animation-duration: 1.5s; 
+  }
+  .equalizer__bar:nth-child(4) {
+    animation-delay: -1s;
+    animation-duration: 1.725s; 
+  }
+  .equalizer__bar:nth-child(5) {
+    animation-delay: -1s;
+    animation-duration: 2s; 
+  }
+  .equalizer__bar:nth-child(6) {
+    animation-delay: -1s;
+    animation-duration: 2.5s; 
+  }
+  .equalizer__bar:nth-child(7) {
+    animation-delay: -1s;
+    animation-duration: 2.725s; 
+  }
+  .equalizer__bar:nth-child(8) {
+    animation-delay: -1s;
+    animation-duration: 3s; 
+  }
+  
+  @keyframes pulse {
+    0%  { transform: scaleY(0.31) }
+    4%  { transform: scaleY(0.25) }
+    8%  { transform: scaleY(0.31) }
+    12% { transform: scaleY(0.5)  }
+    16% { transform: scaleY(0.71) }
+    20% { transform: scaleY(0.93) }
+    24% { transform: scaleY(0.86) }
+    28% { transform: scaleY(0.79) }
+    32% { transform: scaleY(0.79) }
+    36% { transform: scaleY(0.57) }
+    40% { transform: scaleY(0.71) }
+    44% { transform: scaleY(0.71) }
+    48% { transform: scaleY(0.79) }
+    52% { transform: scaleY(0.86) }
+    56% { transform: scaleY(0.93) }
+    60% { transform: scaleY(0.86) }
+    64% { transform: scaleY(0.86) }
+    68% { transform: scaleY(0.79) }
+    72% { transform: scaleY(0.71) }
+    76% { transform: scaleY(0.79) }
+    80% { transform: scaleY(0.86) }
+    84% { transform: scaleY(0.86) }
+    88% { transform: scaleY(0.93) }
+    92% { transform: scaleY(0.71) }
+    96% { transform: scaleY(0.5)  }
+    100%{ transform: scaleY(0.31) }
+  }
+  #nom{
+    position: absolute;
+    right: 100px;
+  }
+  #logout{
+    position: absolute;
+    top: 40px;
+    right: 100px;
+  }

@@ -2,22 +2,28 @@
     "nom": "Classic",
     "cançons": [
       {
-        "title": "onclassical_luisi_schubert_wanderer_fantasie_c-major_opus",
-        "artist": "Gianluca_Luisi",
-        "url": "../assets/music/CLASSIC Erster_Verlust_(Primo_dolore)_-_Marco_Tezza.mp3",
-        "cover": "../assets/img/cover_onclassical.PNG"
+        "title": "Für Elise",
+        "artist": "Beethoven",
+        "url": "../assets/music/CLASSICA Beethoven  Für Elise.mp3",
+        "cover": "../assets/img/Für Elise.jpg"
       },
       {
-        "title": "Erster_Verlust",
-        "artist": "Marco_Tezza",
-        "url": "../assets/music/CLASSIC onclassical_luisi_schubert_wanderer_fantasie_c-major_opus-15_3_-_Gianluca_Luisi.mp3",
-        "cover": "../assets/img/cover_erster_verlust.PNG"
+        "title": "Symphony No 5",
+        "artist": "Beethoven",
+        "url": "../assets/music/CLASSICA Beethoven  Symphony No 5.mp3",
+        "cover": "../assets/img/Symphony 5.jpg"
       },
       {
-        "title": "Andante_e_Rema_con_Variazioni",
-        "artist": "Carlo_Tamponi",
-        "url": "../assets/music/CLASSIC Rossini_-_Andante_e_Rema_con_Variazioni_part._1_-_Carlo_Tamponi.mp3",
-        "cover": "../assets/img/cover_rossini.PNG"
+        "title": "Summer The Four Seasons",
+        "artist": "Vivaldi",
+        "url": "../assets/music/CLASSICA Vivaldi  Summer The Four Seasons.mp3",
+        "cover": "../assets/img/Summer.jpg"
+      },
+      {
+        "title": "Rondo Alla Turca Turkish March",
+        "artist": "Mozart",
+        "url": "../assets/music/CLASSICA Mozart  Rondo Alla Turca Turkish March.mp3",
+        "cover": "../assets/img/Rondo Alla Turca.jfif"
       }
     ]
   }

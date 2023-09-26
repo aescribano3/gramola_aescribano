@@ -2,22 +2,28 @@
     "nom": "Tecno",
     "cançons": [
       {
-        "title": "Aquanova",
-        "artist": "nexus",
-        "url": "../assets/music/TECNO Aquanova_-_nexus.mp3",
-        "cover": "../assets/img/cover_aquanova.PNG"
+        "title": "Touch Me",
+        "artist": "Dj Rui Da Silva",
+        "url": "../assets/music/TECNO Dj Rui Da Silva Touch Me.mp3",
+        "cover": "../assets/img/touch me.jpg"
       },
       {
-        "title": "Now_!!!",
-        "artist": "DJ_Smallest",
-        "url": "../assets/music/TECNO Now_!!!_-_DJ_Smallest.mp3",
-        "cover": "../assets/img/cover_now.PNG"
+        "title": "Ferrari",
+        "artist": "James Hype Miggy Dela Rosa",
+        "url": "../assets/music/TECNO James Hype Miggy Dela Rosa  Ferrari.mp3",
+        "cover": "../assets/img/ferrari.jpg"
       },
       {
-        "title": "White_Collar_Criminals - Broken_hearted",
-        "artist": "carmin.d",
-        "url": "../assets/music/TECNO White_Collar_Criminals_-_Broken_hearted_-_carmin.d.mp3",
-        "cover": "../assets/img/cover_white_collar.PNG"
+        "title": "Save Me",
+        "artist": "Anyma Cassian",
+        "url": "../assets/music/TECNO Anyma Cassian  Save Me Extended.mp3",
+        "cover": "../assets/img/save me.jpg"
+      },
+      {
+        "title": "Push Up",
+        "artist": "Creeds",
+        "url": "../assets/music/TECNO Creeds  Push Up Official Video.mp3",
+        "cover": "../assets/img/push up.jpg"
       }
     ]
   }

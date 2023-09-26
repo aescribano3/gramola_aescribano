@@ -2,22 +2,28 @@
     "nom": "Pop",
     "cançons": [
       {
-        "title": "Constellate",
-        "artist": "Fleurie",
-        "url": "../assets/music/POP Constellate_-_Fleurie.mp3",
-        "cover": "../assets/img/cover_constellate.PNG"
+        "title": "Padam Padam",
+        "artist": "Kylie Minogue",
+        "url": "../assets/music/POP Kylie Minogue  Padam Padam Official Video.mp3",
+        "cover": "../assets/img/Padam Padam.jpg"
       },
       {
-        "title": "Oh,_Conspiracy",
-        "artist": "Flat_People",
-        "url": "../assets/music/POP Oh,_Conspiracy_-_Flat_People.mp3",
-        "cover": "../assets/img/cover_conspiracy.PNG"
+        "title": "Spears Toxic ",
+        "artist": "Britney",
+        "url": "../assets/music/POP Britney Spears  Toxic Official HD Video.mp3",
+        "cover": "../assets/img/Toxic-cover.jpg"
       },
       {
-        "title": "Skydiving_(feat._Jasmine_Kara)",
-        "artist": "Jonay",
-        "url": "../assets/music/POP Skydiving_(feat._Jasmine_Kara)_-_Jonay.mp3",
-        "cover": "../assets/img/cover_skydiving.PNG"
+        "title": "Umbrella Orange",
+        "artist": "Rihanna",
+        "url": "../assets/music/POP Rihanna  Umbrella Orange Version Official Music Video ft JAYZ.mp3",
+        "cover": "../assets/img/Rihanna.jpg"
+      },
+      {
+        "title": "Hits Different",
+        "artist": "Taylor Swift",
+        "url": "../assets/music/POP Taylor Swift  Hits Different.mp3",
+        "cover": "../assets/img/Taylor.jpg"
       }
     ]
   }
