@@ -45,19 +45,28 @@ if (isset($_POST["name"]) && isset($_POST["pwd"])) {
         </div>
         <?php else: ?>
         <!-- Monstra formulari si no s'ha iniciat sessió -->
-        <form id="login-form" action="index.php" method="post">
-            <input type="text" id="name" name="name" placeholder="Nom d'usuari" required>
-            <input type="password" id="pwd" name="pwd" placeholder="Contrasenya" required>
-            <input type="submit" value="Enviar">
+        <form id="login-form" action="#" method="post">
+            <div class="form-group">
+                <label for="name">Nombre de Usuario:</label>
+                <input type="text" id="name" name="name" placeholder="Ingresa tu nombre de usuario" required>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Contraseña:</label>
+                <input type="password" id="pwd" name="pwd" placeholder="Ingresa tu contraseña" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Iniciar Sesión">
+            </div>
         </form>
+
         <?php endif; ?>
     </header>
         <div id="casete">
         <!-- Afegeix un enllaç a les imatges -->
-        <a href="index.php?playlist_id=0"><img id='Classic' class="Slider" src="../assets/img/casete_classic.png"></a>
-        <a href="index.php?playlist_id=1"><img id='Pop' class="Slider" src="../assets/img/casete_pop.png"></a>
-        <a href="index.php?playlist_id=2"><img id='Rock' class="Slider" src="../assets/img/casete_rock.png"></a>
-        <a href="index.php?playlist_id=3"><img id='Tecno' class="Slider" src="../assets/img/casete_tecno.png"></a>
+        <a href="index.php?playlist_id=0"><img id='Classic' class="Slider" src="../assets/img/Classic.png"></a>
+        <a href="index.php?playlist_id=1"><img id='Pop' class="Slider" src="../assets/img/Pop.png"></a>
+        <a href="index.php?playlist_id=2"><img id='Rock' class="Slider" src="../assets/img/Rock.png"></a>
+        <a href="index.php?playlist_id=3"><img id='Tecno' class="Slider" src="../assets/img/Tecno.png"></a>
         <button class="w3-button w3-display-left" id="botI" onclick="plusDivs(-1)">&#10094;</button>
         <button class="w3-button w3-display-right" id="botD" onclick="plusDivs(+1)">&#10095;</button>
     </div>

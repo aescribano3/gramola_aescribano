@@ -29,6 +29,7 @@ function playAudio(){
     document.getElementById('backward').src = "../assets/img/backward.png";
     document.getElementById('forward').src = "../assets/img/forward.png";
     document.getElementById('stop').src = "../assets/img/stop.png";
+    document.getElementById('progress-bar').style.backgroundColor = "#222222"
 }
 
 //Para y reinicia la canço, mostra boto de play
@@ -70,14 +71,17 @@ function randomAudio() {
     shuffleArray(originalSongOrder);
 
     playSongAtIndex(originalSongOrder[currentSongIndex]);
-
+    equalizer.style.display = "flex";
 }
 
 // Avanza
 function forwardAudio() {
     currentSongIndex++;
+    document.getElementById('backward').src = "../assets/img/backward.png";
     if (currentSongIndex >= cançons.length) {
-        currentSongIndex = 0;
+        currentSongIndex--;
+        document.getElementById('forward').src = "../assets/img/forward_off.png";
+
     }
     playSongAtIndex(currentSongIndex);
 }
@@ -85,8 +89,10 @@ function forwardAudio() {
 // Retrocedeix
 function backwardAudio() {
     currentSongIndex--;
+    document.getElementById('forward').src = "../assets/img/forward.png";
     if (currentSongIndex < 0) {
-        currentSongIndex = cançons.length - 1;
+        currentSongIndex++;
+        document.getElementById('backward').src = "../assets/img/backward_off.png";
     }
     playSongAtIndex(currentSongIndex);
 }
@@ -167,6 +173,7 @@ function playAudioLlista(url, title, cover, artist) {
     var audio = document.getElementById("audio");
     audio.src = url;
     audio.play();
+    document.getElementById('progress-bar').style.backgroundColor = "#222222"
     document.getElementById('play').src = "../assets/img/pause.png";
     document.getElementById('random').src = "../assets/img/random.png";
     document.getElementById('backward').src = "../assets/img/backward.png";
