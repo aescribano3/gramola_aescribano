@@ -17,8 +17,13 @@ if (isset($_POST["name"]) && isset($_POST["pwd"])) {
     $username = $_POST["name"];
     $password = $_POST["pwd"];
     $loggedIn = true;
+    setcookie("username", $username, strtotime("1 day"), "/");
 }
 
+if (isset($_COOKIE["username"])) {
+    $username = $_COOKIE["username"];
+    $loggedIn = true;
+}
 ?>
 
 <!DOCTYPE html>
@@ -40,8 +45,8 @@ if (isset($_POST["name"]) && isset($_POST["pwd"])) {
         <?php if ($loggedIn): ?>
         <!-- Mostra el nom y el logout si s'ha iniciat sessió -->
         <div id="user-info">
-            <h2 id="nom"><?php echo $username ?></h2>
-            <a href="index.php"><h4 id="logout">Log Out</h4></a>
+            <h2 id="nom"><?= $username ?></h2>
+            <a href="informacioTecnica.php"><h4 id="logout">Log Out</h4></a>
         </div>
         <?php else: ?>
         <!-- Monstra formulari si no s'ha iniciat sessió -->
@@ -73,11 +78,12 @@ if (isset($_POST["name"]) && isset($_POST["pwd"])) {
     <div id="div_2">
         <!-- Llista de reproducció-->
         <div id="Llista">
+        <?php if (isset($_GET["playlist_id"]) && is_numeric($_GET["playlist_id"]) && $_GET["playlist_id"] >= 0 && $_GET["playlist_id"] < count($files)): ?>
             <ul>
             <?php
-                // Genera la llista de cançons
+                // Genera la lista de canciones solo si hay una playlist seleccionada
                 foreach ($cançons as $canço) {
-                    //Afegeix un onclick per la url, titol, cover y artista
+                    //Agrega un onclick para la URL, título, portada y artista
                     echo "<li onclick=\"playAudioLlista(
                         '{$canço['url']}',
                         '{$canço['title']}',
@@ -88,12 +94,13 @@ if (isset($_POST["name"]) && isset($_POST["pwd"])) {
                 }
                 ?>
             </ul>
+        <?php endif; ?>
         </div>
         <div id="Caratula">
             <img id="cover" src="../assets/img/icono.PNG" alt="">
             <p id="cover_txt"></p>
         </div>
-        </div>
+    </div>
         <footer>
             <!--Creació del control d'audio-->
             <div class="equalizer" id="equalizer">

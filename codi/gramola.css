@@ -62,7 +62,7 @@ header {
     padding: 10px;
 }
 #Caratula img {
-    max-width: 280px; /* Ajusta el tamaño máximo de las imágenes de cover */
+    max-width: 250px; /* Ajusta el tamaño máximo de las imágenes de cover */
     height: auto; /* Mantener la proporción de aspecto */
     display: block; /* Alinea las imágenes en el centro horizontalmente */
     margin: 0 auto; /* Centra las imágenes horizontalmente en su contenedor */

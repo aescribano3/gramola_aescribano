@@ -24,6 +24,12 @@
         "artist": "Creeds",
         "url": "../assets/music/TECNO Creeds  Push Up Official Video.mp3",
         "cover": "../assets/img/push up.jpg"
+      },
+      {
+        "title": "Symbolism",
+        "artist": "Electro Light",
+        "url": "../assets/music/TECNO Electro Light Symbolism NCS Release.mp3",
+        "cover": "../assets/img/turip.PNG"
       }
     ]
   }
