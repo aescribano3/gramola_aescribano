@@ -29,14 +29,16 @@ if (isset($_COOKIE["username"])) {
 //Guarda la id de la ultima playlist
 if (isset($_GET["playlist_id"])) {
     $playlistId_last = (int)$_GET["playlist_id"];
+    $data_seleccio = gmdate('Y-m-d h:i:s \G\M\T', time());
 }
 
 if (isset($playlistId_last)) {
     setcookie("playlist_id", $playlistId_last, strtotime("1 day"), "/");
+    setcookie("playlist_time", $data_seleccio, strtotime("1 day"), "/");
 } elseif (isset($_COOKIE["playlist_id"])) {
     $playlistId_last = $_COOKIE["playlist_id"];
+    $data_seleccio = $_COOKIE["playlist_time"];
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -56,27 +58,30 @@ if (isset($playlistId_last)) {
         <!-- Icone de la pagina -->
         <img id="icono" src="../assets/img/icono.PNG" alt="icono">
         <?php if ($loggedIn): ?>
-        <!-- Mostra el nom y el logout si s'ha iniciat sessió -->
-        <div id="user-info">
-            <h2 id="nom"><?= $username ?></h2>
-            <a href="informacioTecnica.php"><h4 id="logout">Log Out</h4></a>
-        </div>
+            <!-- Mostra el nom y el logout si s'ha iniciat sessió -->
+            <div id="user-info">
+                <h2 id="nom"><?= $username ?></h2>
+                <a href="logout.php"><h4 id="logout">Log Out</h4></a>
+            </div>
         <?php else: ?>
-        <!-- Monstra formulari si no s'ha iniciat sessió -->
-        <form id="login-form" action="#" method="post">
-            <div class="form-group">
-                <label for="name">Nombre de Usuario:</label>
-                <input type="text" id="name" name="name" placeholder="Ingresa tu nombre de usuario" required>
-            </div>
-            <div class="form-group">
-                <label for="pwd">Contraseña:</label>
-                <input type="password" id="pwd" name="pwd" placeholder="Ingresa tu contraseña" required>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Iniciar Sesión">
-            </div>
-        </form>
+            <!-- Monstra formulari si no s'ha iniciat sessió -->
+            <form id="login-form" action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Nombre de Usuario:</label>
+                    <input type="text" id="name" name="name" placeholder="Ingresa tu nombre de usuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Contraseña:</label>
+                    <input type="password" id="pwd" name="pwd" placeholder="Ingresa tu contraseña" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Iniciar Sesión">
+                </div>
+            </form>
         <?php endif; ?>
+        <?php if($loggedIn): ?>
+                <a href="informacioTecnica.php"><p>Informació Tecnica</p></a>
+            <?php endif; ?>
     </header>
         <div id="casete">
         <!-- Afegeix un enllaç a les imatges -->

@@ -42,6 +42,9 @@ audio = document.getElementById("audio");
 // Actualitzar la barra mentres sona la canço
 audio.addEventListener('timeupdate', updateProgress);
 
+// Reprodueix la seguent canço
+audio.addEventListener('ended', playNextSong);
+
 // Variables per la caratula
 var cover_img = document.getElementById("cover");
 var cover_txt = document.getElementById("cover_txt");
@@ -51,9 +54,6 @@ var currentSongIndex = 0;
 
 // Ordre original
 var originalSongOrder = [];
-
-// Reprodueix la seguent canço
-audio.addEventListener('ended', playNextSong);
 
 // Retrocedeix
 function backwardAudio() {
