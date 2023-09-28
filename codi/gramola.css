@@ -8,35 +8,35 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #111; /* Fondo oscuro */
-    color: #fff; /* Texto blanco */
+    background-color: #111;
+    color: #fff;
     font-size: 16px;
     line-height: 1.6;
 }
 footer {
-    background-color: #333; /* Fondo oscuro */
+    background-color: #333;
     padding: 20px;
     text-align: center;
     position: static;
 }
 .Slider {
     display: none;
-    max-width: 250px; /* Reducción del ancho máximo */
-    height: auto; /* Mantener la proporción de aspecto */
+    max-width: 250px;
+    height: auto;
     margin: 0 auto;
 }
 
 header {
-    background-color: #222; /* Fondo oscuro */
+    background-color: #222;
     padding: 10px;
     text-align: center;
 }
 #Llista {
     flex: 1;
     max-width: 560px;
-    border: 1px solid #333; /* Borde oscuro */
+    border: 1px solid #333;
     border-radius: 5px;
-    background-color: #222; /* Fondo oscuro */
+    background-color: #222;
     padding: 10px;
     margin-right: 20px;
 }
@@ -51,21 +51,21 @@ header {
 }
 
 #Llista ul li:hover {
-    background-color: #333; /* Color de fondo más oscuro al pasar el ratón */
+    background-color: #333;
 }
 #Caratula {
     flex: 2;
     max-width: 690px;
-    border: 1px solid #333; /* Borde oscuro */
+    border: 1px solid #333;
     border-radius: 10px;
-    background-color: #222; /* Fondo oscuro */
+    background-color: #222;
     padding: 10px;
 }
 #Caratula img {
-    max-width: 250px; /* Ajusta el tamaño máximo de las imágenes de cover */
-    height: auto; /* Mantener la proporción de aspecto */
-    display: block; /* Alinea las imágenes en el centro horizontalmente */
-    margin: 0 auto; /* Centra las imágenes horizontalmente en su contenedor */
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 #div_2 {
@@ -81,8 +81,8 @@ header {
 }
 #casete {
     text-align: center;
-    padding: 10px; /* Reducción del espacio interior */
-    background-color: #222; /* Fondo oscuro */
+    padding: 10px;
+    background-color: #222;
 }
 #random{
     width: 40px;
@@ -179,6 +179,7 @@ input{
     margin-top: 120px;
     height: 96px;
     width: 120px;
+    top: 700px;
   }
   
   .equalizer__bar {
@@ -280,16 +281,16 @@ input{
 }
 #botI, #botD {
     display: inline-block;
-    background-color: #333; /* Fondo oscuro */
+    background-color: #333;
     color: #fff;
     border: none;
-    font-size: 1rem; /* Tamaño de fuente reducido */
-    padding: 5px 10px; /* Reducción del espacio interior */
+    font-size: 1rem;
+    padding: 5px 10px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 #botI:hover, #botD:hover {
-    background-color: #444; /* Color de fondo más oscuro al pasar el ratón */
+    background-color: #444;
 }
 #botI{
     position: absolute;
@@ -322,7 +323,7 @@ input[type="password"] {
     border-radius: 5px;
 }
 input[type="submit"] {
-    background-color: #333; /* Fondo oscuro */
+    background-color: #333;
     color: #fff;
     padding: 10px 20px;
     font-size: 18px;
@@ -332,5 +333,5 @@ input[type="submit"] {
     transition: background-color 0.3s;
 }
 input[type="submit"]:hover {
-    background-color: #555; /* Cambia de color al pasar el mouse */
+    background-color: #555;
 }

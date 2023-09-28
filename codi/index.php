@@ -20,10 +20,23 @@ if (isset($_POST["name"]) && isset($_POST["pwd"])) {
     setcookie("username", $username, strtotime("1 day"), "/");
 }
 
+//Guarda el nom d'usuari a la cookie
 if (isset($_COOKIE["username"])) {
     $username = $_COOKIE["username"];
     $loggedIn = true;
 }
+
+//Guarda la id de la ultima playlist
+if (isset($_GET["playlist_id"])) {
+    $playlistId_last = (int)$_GET["playlist_id"];
+}
+
+if (isset($playlistId_last)) {
+    setcookie("playlist_id", $playlistId_last, strtotime("1 day"), "/");
+} elseif (isset($_COOKIE["playlist_id"])) {
+    $playlistId_last = $_COOKIE["playlist_id"];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +76,6 @@ if (isset($_COOKIE["username"])) {
                 <input type="submit" value="Iniciar Sesión">
             </div>
         </form>
-
         <?php endif; ?>
     </header>
         <div id="casete">
@@ -81,9 +93,8 @@ if (isset($_COOKIE["username"])) {
         <?php if (isset($_GET["playlist_id"]) && is_numeric($_GET["playlist_id"]) && $_GET["playlist_id"] >= 0 && $_GET["playlist_id"] < count($files)): ?>
             <ul>
             <?php
-                // Genera la lista de canciones solo si hay una playlist seleccionada
+                // Genera la llista de les cançons de la playlist seleccionada
                 foreach ($cançons as $canço) {
-                    //Agrega un onclick para la URL, título, portada y artista
                     echo "<li onclick=\"playAudioLlista(
                         '{$canço['url']}',
                         '{$canço['title']}',
@@ -94,10 +105,26 @@ if (isset($_COOKIE["username"])) {
                 }
                 ?>
             </ul>
+        <?php elseif(isset($playlistId_last) && is_numeric($playlistId_last) && $playlistId_last >= 0 && $playlistId_last < count($files)): ?>
+            <ul>
+                <?php
+                    // Genera la llista de cançons de l'ultima playlist
+                    $lastPlaylist = json_decode(file_get_contents($files[$playlistId_last]), true);
+                    foreach ($lastPlaylist["cançons"] as $canço) {
+                        echo "<li onclick=\"playAudioLlista(
+                            '{$canço['url']}',
+                            '{$canço['title']}',
+                            '{$canço['cover']}',
+                            '{$canço['artist']}')\">
+                            {$canço['title']}
+                            </li>";
+                    }
+                ?>
+            </ul>
         <?php endif; ?>
         </div>
         <div id="Caratula">
-            <img id="cover" src="../assets/img/icono.PNG" alt="">
+            <img id="cover" src="" alt="">
             <p id="cover_txt"></p>
         </div>
     </div>

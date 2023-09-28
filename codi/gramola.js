@@ -42,7 +42,7 @@ audio = document.getElementById("audio");
 // Actualitzar la barra mentres sona la canço
 audio.addEventListener('timeupdate', updateProgress);
 
-// Variables para la carátula y el título
+// Variables per la caratula
 var cover_img = document.getElementById("cover");
 var cover_txt = document.getElementById("cover_txt");
 
