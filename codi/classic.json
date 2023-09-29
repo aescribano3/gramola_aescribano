@@ -1,29 +1,29 @@
 {
-    "nom": "Classic",
-    "cançons": [
-      {
-        "title": "Für Elise",
-        "artist": "Beethoven",
-        "url": "../assets/music/CLASSICA Beethoven  Für Elise.mp3",
-        "cover": "../assets/img/Für Elise.jpg"
-      },
-      {
-        "title": "Symphony No 5",
-        "artist": "Beethoven",
-        "url": "../assets/music/CLASSICA Beethoven  Symphony No 5.mp3",
-        "cover": "../assets/img/Symphony 5.jpg"
-      },
-      {
-        "title": "Summer The Four Seasons",
-        "artist": "Vivaldi",
-        "url": "../assets/music/CLASSICA Vivaldi  Summer The Four Seasons.mp3",
-        "cover": "../assets/img/Summer.jpg"
-      },
-      {
-        "title": "Rondo Alla Turca Turkish March",
-        "artist": "Mozart",
-        "url": "../assets/music/CLASSICA Mozart  Rondo Alla Turca Turkish March.mp3",
-        "cover": "../assets/img/Rondo Alla Turca.jfif"
-      }
+    "nom":"Classic",
+    "cançons":[
+        {
+            "title":"Fur Elise",
+            "artist":"Beethoven",
+            "url":"../assets/music/CLASSICA Beethoven  Fur Elise.mp3",
+            "cover":"../assets/img/Fur Elise.jpg"
+        },
+        {
+            "title":"Symphony No 5",
+            "artist":"Beethoven",
+            "url":"../assets/music/CLASSICA Beethoven  Symphony No 5.mp3",
+            "cover":"../assets/img/Symphony 5.jpg"
+        },
+        {
+            "title":"Summer The Four Seasons",
+            "artist":"Vivaldi",
+            "url":"../assets/music/CLASSICA Vivaldi  Summer The Four Seasons.mp3",
+            "cover":"../assets/img/Summer.jpg"
+        },
+        {
+            "title":"Rondo Alla Turca Turkish March",
+            "artist":"Mozart",
+            "url":"../assets/music/CLASSICA Mozart  Rondo Alla Turca Turkish March.mp3",
+            "cover":"../assets/img/Rondo Alla Turca.jfif"
+        }
     ]
-  }
+}

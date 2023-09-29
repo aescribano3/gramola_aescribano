@@ -1,5 +1,7 @@
 <?php
-setcookie("username", "", time() - 480000, "/");
+session_start();
+
+unset($_SESSION["username"]);
 
 header("Location: index.php");
 ?>

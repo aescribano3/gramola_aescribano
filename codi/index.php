@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $files = glob("*.json");
 
 $playlistId = 0;
@@ -17,27 +19,33 @@ if (isset($_POST["name"]) && isset($_POST["pwd"])) {
     $username = $_POST["name"];
     $password = $_POST["pwd"];
     $loggedIn = true;
-    setcookie("username", $username, strtotime("1 day"), "/");
+    $_SESSION["username"] = $username;
 }
 
 //Guarda el nom d'usuari a la cookie
-if (isset($_COOKIE["username"])) {
-    $username = $_COOKIE["username"];
+if (isset($_SESSION["username"])) {
+    $username = $_SESSION["username"];
     $loggedIn = true;
 }
 
-//Guarda la id de la ultima playlist
+// Nom de les playlists
+$playlist_names = ["Classic", "Pop", "Rock", "Tecno"];
+
+// Guarda la id, data y nom de l'ultima playlist seleccionada
 if (isset($_GET["playlist_id"])) {
     $playlistId_last = (int)$_GET["playlist_id"];
     $data_seleccio = gmdate('Y-m-d h:i:s \G\M\T', time());
+    $playlist_name_last = $playlist_names[$playlistId_last];
 }
 
 if (isset($playlistId_last)) {
     setcookie("playlist_id", $playlistId_last, strtotime("1 day"), "/");
     setcookie("playlist_time", $data_seleccio, strtotime("1 day"), "/");
+    setcookie("playlist_name", $playlist_name_last, strtotime("1 day"), "/");
 } elseif (isset($_COOKIE["playlist_id"])) {
     $playlistId_last = $_COOKIE["playlist_id"];
     $data_seleccio = $_COOKIE["playlist_time"];
+    $playlist_name_last = $_COOKIE["playlist_name"];
 }
 ?>
 
@@ -67,15 +75,15 @@ if (isset($playlistId_last)) {
             <!-- Monstra formulari si no s'ha iniciat sessió -->
             <form id="login-form" action="#" method="post">
                 <div class="form-group">
-                    <label for="name">Nombre de Usuario:</label>
-                    <input type="text" id="name" name="name" placeholder="Ingresa tu nombre de usuario" required>
+                    <label for="name">Nom d'Usuari:</label>
+                    <input type="text" id="name" name="name" placeholder="Insereix el nom d'usuri" required>
                 </div>
                 <div class="form-group">
-                    <label for="pwd">Contraseña:</label>
-                    <input type="password" id="pwd" name="pwd" placeholder="Ingresa tu contraseña" required>
+                    <label for="pwd">Contrasenya:</label>
+                    <input type="password" id="pwd" name="pwd" placeholder="Insereix la contrasenya" required>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Iniciar Sesión">
+                    <input type="submit" value="Inici Sesió">
                 </div>
             </form>
         <?php endif; ?>
@@ -110,22 +118,6 @@ if (isset($playlistId_last)) {
                 }
                 ?>
             </ul>
-        <?php elseif(isset($playlistId_last) && is_numeric($playlistId_last) && $playlistId_last >= 0 && $playlistId_last < count($files)): ?>
-            <ul>
-                <?php
-                    // Genera la llista de cançons de l'ultima playlist
-                    $lastPlaylist = json_decode(file_get_contents($files[$playlistId_last]), true);
-                    foreach ($lastPlaylist["cançons"] as $canço) {
-                        echo "<li onclick=\"playAudioLlista(
-                            '{$canço['url']}',
-                            '{$canço['title']}',
-                            '{$canço['cover']}',
-                            '{$canço['artist']}')\">
-                            {$canço['title']}
-                            </li>";
-                    }
-                ?>
-            </ul>
         <?php endif; ?>
         </div>
         <div id="Caratula">
@@ -157,6 +149,9 @@ if (isset($playlistId_last)) {
                 <div id="progress"></div>
             </div>
             <div id="duration">0:00 / 0:00</div>
+            <div>
+                <a href="upload.php"><p>Upload Song</p></a>
+            </div>
             <script src="gramola.js"></script>
         </footer>
         <script>

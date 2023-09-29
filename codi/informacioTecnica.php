@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 
 ?>
@@ -17,7 +17,7 @@
     <div id="cookies">
         <h3> Usuari: 
             <?php
-                echo $_COOKIE["username"];
+                echo $_SESSION["username"];
             ?>
         </h3>
         <h3> Id ultima playlist escoltada: 
@@ -25,11 +25,17 @@
                 echo $_COOKIE["playlist_id"];
             ?>
         </h3>
+        <h3> Nom utima playlist escoltada: 
+            <?php
+                echo $_COOKIE["playlist_name"];
+            ?>
+        </h3>
         <h3> Data utima playlist escoltada: 
             <?php
                 echo $_COOKIE["playlist_time"];
             ?>
         </h3>
+        <a href="index.php"><h4>Tornar a la pagina principal</h4></a>
     </div>
     <script src="gramola.js"></script>
 </body>
