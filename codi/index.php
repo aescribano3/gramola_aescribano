@@ -34,7 +34,8 @@ $playlist_names = ["Classic", "Pop", "Rock", "Tecno"];
 // Guarda la id, data y nom de l'ultima playlist seleccionada
 if (isset($_GET["playlist_id"])) {
     $playlistId_last = (int)$_GET["playlist_id"];
-    $data_seleccio = gmdate('Y-m-d h:i:s \G\M\T', time());
+    date_default_timezone_set('Europe/Madrid');
+    $data_seleccio = date('Y-m-d H:i:s T');
     $playlist_name_last = $playlist_names[$playlistId_last];
 }
 
@@ -47,6 +48,65 @@ if (isset($playlistId_last)) {
     $data_seleccio = $_COOKIE["playlist_time"];
     $playlist_name_last = $_COOKIE["playlist_name"];
 }
+
+if (!isset($_SESSION["count_Classic"])) {
+    $_SESSION["count_Classic"] = 0;
+}
+
+if (!isset($_SESSION["count_Pop"])) {
+    $_SESSION["count_Pop"] = 0;
+}
+
+if (!isset($_SESSION["count_Rock"])) {
+    $_SESSION["count_Rock"] = 0;
+}
+
+if (!isset($_SESSION["count_Tecno"])) {
+    $_SESSION["count_Tecno"] = 0;
+}
+
+// Actualizar el contador de selecciones cuando se selecciona una playlist (ajusta esto según tu lógica)
+if (isset($_GET["playlist_id"])) {
+    $playlistId = (int)$_GET["playlist_id"];
+
+    // Aumenta el contador de selecciones de la playlist seleccionada
+    switch ($playlistId) {
+        case 0:
+            $_SESSION["count_Classic"]++;
+            break;
+        case 1:
+            $_SESSION["count_Pop"]++;
+            break;
+        case 2:
+            $_SESSION["count_Rock"]++;
+            break;
+        case 3:
+            $_SESSION["count_Tecno"]++;
+            break;
+        default:
+            // Maneja valores de playlist_id no válidos si es necesario
+            break;
+    }
+}
+
+$selectionCounts = [
+    "Classic" => $_SESSION["count_Classic"],
+    "Pop" => $_SESSION["count_Pop"],
+    "Rock" => $_SESSION["count_Rock"],
+    "Tecno" => $_SESSION["count_Tecno"]
+];
+
+// Llista de playlist
+arsort($selectionCounts); // Ordena per quantitat de selecció
+$sortedPlaylists = array_keys($selectionCounts); // Obte els noms de les playlist ordenades per nom
+
+// Guardar la lista ordenada en una cookie
+$cookieName = "sorted_playlists";
+$cookieValue = implode(",", $sortedPlaylists);
+$cookieExpiration = time() + 3600 * 24;
+
+setcookie("sorted_playlists", $cookieValue, strtotime("1 day"), "/");
+
 ?>
 
 <!DOCTYPE html>

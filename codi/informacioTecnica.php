@@ -35,6 +35,11 @@ session_start();
                 echo $_COOKIE["playlist_time"];
             ?>
         </h3>
+        <h3> Ranking playlist:
+            <?php
+                echo $_COOKIE["sorted_playlists"];
+            ?>
+        </h3>
         <a href="index.php"><h4>Tornar a la pagina principal</h4></a>
     </div>
     <script src="gramola.js"></script>

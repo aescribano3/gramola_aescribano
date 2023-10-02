@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 $files = glob("*.json");
 
 $playlistId = 0;
@@ -11,36 +14,43 @@ $playlist = json_decode($data, true);
 
 $songs = $playlist["cançons"];
 
-// Comprueba si se ha enviado un archivo
-if (isset($_FILES["song"]) && $_FILES["song"]["error"] === UPLOAD_ERR_OK) {
-    // Obtiene información sobre el archivo de la canción
-    $songTitle = $_POST["title"];
-    $songAuthor = $_POST["author"];
-    $songCover = $_POST["cover"];
-    $tempFilePath = $_FILES["song"]["tmp_name"];
+//echo "File path: " . $files[$playlistId];
 
-    // Genera un nombre único para el archivo de la canción
+//echo "Upload error code: " . $_FILES["url"]["error"];
+
+// Comprova si s'ha enviat un arxiu
+if (isset($_FILES["url"]) && $_FILES["url"]["error"] === UPLOAD_ERR_OK) {
+    // Obtenir informació
+    $songTitle = $_POST["title"];
+    $songArtist = $_POST["artist"];
+    $tempFilePath = $_FILES["url"]["tmp_name"];
+    $songCover = $_POST["cover"];
+
     $fileName = uniqid() . ".mp3";
-    
-    // Mueve el archivo de la canción a la ubicación deseada
+
+    //echo "Temp file path: " . $tempFilePath;
+
+    //echo "New file path: " . "../assets/music/" . $fileName;
+
+    // Mou la canço a la carpeta de les cançons
     move_uploaded_file($tempFilePath, "../assets/music/" . $fileName);
 
-    // Crea un nuevo objeto de canción
+    // Crea un objecte per la nova canço
     $newSong = [
         "title" => $songTitle,
-        "artist" => $songAuthor,
+        "artist" => $songArtist,
         "url" => "../assets/music/" . $fileName,
         "cover" => $songCover,
     ];
 
-    // Añade la nueva canción al array de canciones
+    // Afegeix la nova cancço al array
     $songs[] = $newSong;
 
-    // Actualiza el array de canciones en el archivo JSON
+    // Actualitza l'arxiu JSON
     $playlist["cançons"] = $songs;
     $cançonsJSON = json_encode($playlist);
 
-    // Guarda los cambios en el archivo JSON
+    // Desa els canvis al JSON
     file_put_contents($files[$playlistId], $cançonsJSON);
 }
 
