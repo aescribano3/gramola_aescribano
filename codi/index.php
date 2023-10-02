@@ -1,6 +1,8 @@
 <?php
+//Inici sessió
 session_start();
 
+//Llegeix els arxius jason
 $files = glob("*.json");
 
 $playlistId = 0;
@@ -49,6 +51,7 @@ if (isset($playlistId_last)) {
     $playlist_name_last = $_COOKIE["playlist_name"];
 }
 
+//Comptador de les playlist
 if (!isset($_SESSION["count_Classic"])) {
     $_SESSION["count_Classic"] = 0;
 }
@@ -65,11 +68,11 @@ if (!isset($_SESSION["count_Tecno"])) {
     $_SESSION["count_Tecno"] = 0;
 }
 
-// Actualizar el contador de selecciones cuando se selecciona una playlist (ajusta esto según tu lógica)
+// Actualitza el comptador quan es selecciona una playlist
 if (isset($_GET["playlist_id"])) {
     $playlistId = (int)$_GET["playlist_id"];
 
-    // Aumenta el contador de selecciones de la playlist seleccionada
+    // Augmenta el comptador de la playlist seleccionada
     switch ($playlistId) {
         case 0:
             $_SESSION["count_Classic"]++;
@@ -84,7 +87,6 @@ if (isset($_GET["playlist_id"])) {
             $_SESSION["count_Tecno"]++;
             break;
         default:
-            // Maneja valores de playlist_id no válidos si es necesario
             break;
     }
 }
@@ -100,7 +102,7 @@ $selectionCounts = [
 arsort($selectionCounts); // Ordena per quantitat de selecció
 $sortedPlaylists = array_keys($selectionCounts); // Obte els noms de les playlist ordenades per nom
 
-// Guardar la lista ordenada en una cookie
+// Guarda la llista ordenada en una cookie
 $cookieName = "sorted_playlists";
 $cookieValue = implode(",", $sortedPlaylists);
 $cookieExpiration = time() + 3600 * 24;

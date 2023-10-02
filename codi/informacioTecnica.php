@@ -15,26 +15,31 @@ session_start();
 </head>
 <body>
     <div id="cookies">
+        <!-- Mostra el nom d'usuari -->
         <h3> Usuari: 
             <?php
                 echo $_SESSION["username"];
             ?>
         </h3>
+        <!-- Mostra la id de l'ultima playlist -->
         <h3> Id ultima playlist escoltada: 
             <?php
                 echo $_COOKIE["playlist_id"];
             ?>
         </h3>
+        <!-- Moatra el nom de l'ultima playlist -->
         <h3> Nom utima playlist escoltada: 
             <?php
                 echo $_COOKIE["playlist_name"];
             ?>
         </h3>
+        <!-- Mostra la data de l'ultima playlist -->
         <h3> Data utima playlist escoltada: 
             <?php
                 echo $_COOKIE["playlist_time"];
             ?>
         </h3>
+        <!-- Mostra la llista de les playlist ordenades -->
         <h3> Ranking playlist:
             <?php
                 echo $_COOKIE["sorted_playlists"];
