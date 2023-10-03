@@ -45,7 +45,7 @@ session_start();
                 echo $_COOKIE["sorted_playlists"];
             ?>
         </h3>
-        <a href="index.php"><h4>Tornar a la pagina principal</h4></a>
+        <a href="../index.php"><h4>Tornar a la pagina principal</h4></a>
     </div>
     <script src="gramola.js"></script>
 </body>

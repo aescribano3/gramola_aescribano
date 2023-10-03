@@ -3,7 +3,7 @@
 session_start();
 
 //Llegeix els arxius jason
-$files = glob("*.json");
+$files = glob("codi/*.json");
 
 $playlistId = 0;
 if (isset($_GET["playlist_id"])) {
@@ -120,18 +120,18 @@ setcookie("sorted_playlists", $cookieValue, strtotime("1 day"), "/");
         <!--Link de l'estil css-->
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Wavefont">
-        <link rel="stylesheet" href="gramola.css">
+        <link rel="stylesheet" href="codi/gramola.css">
         <title>GRAMOLA / AESCRIBANO</title>
     </head>
     <body>
     <header>
         <!-- Icone de la pagina -->
-        <img id="icono" src="../assets/img/icono.PNG" alt="icono">
+        <img id="icono" src="assets/img/icono.PNG" alt="icono">
         <?php if ($loggedIn): ?>
             <!-- Mostra el nom y el logout si s'ha iniciat sessió -->
             <div id="user-info">
                 <h2 id="nom"><?= $username ?></h2>
-                <a href="logout.php"><h4 id="logout">Log Out</h4></a>
+                <a href="codi/logout.php"><h4 id="logout">Log Out</h4></a>
             </div>
         <?php else: ?>
             <!-- Monstra formulari si no s'ha iniciat sessió -->
@@ -150,15 +150,15 @@ setcookie("sorted_playlists", $cookieValue, strtotime("1 day"), "/");
             </form>
         <?php endif; ?>
         <?php if($loggedIn): ?>
-                <a href="informacioTecnica.php"><p>Informació Tecnica</p></a>
+                <a href="codi/informacioTecnica.php"><p>Informació Tecnica</p></a>
             <?php endif; ?>
     </header>
         <div id="casete">
         <!-- Afegeix un enllaç a les imatges -->
-        <a href="index.php?playlist_id=0"><img id='Classic' class="Slider" src="../assets/img/Classic.png"></a>
-        <a href="index.php?playlist_id=1"><img id='Pop' class="Slider" src="../assets/img/Pop.png"></a>
-        <a href="index.php?playlist_id=2"><img id='Rock' class="Slider" src="../assets/img/Rock.png"></a>
-        <a href="index.php?playlist_id=3"><img id='Tecno' class="Slider" src="../assets/img/Tecno.png"></a>
+        <a href="index.php?playlist_id=0"><img id='Classic' class="Slider" src="assets/img/Classic.png"></a>
+        <a href="index.php?playlist_id=1"><img id='Pop' class="Slider" src="assets/img/Pop.png"></a>
+        <a href="index.php?playlist_id=2"><img id='Rock' class="Slider" src="assets/img/Rock.png"></a>
+        <a href="index.php?playlist_id=3"><img id='Tecno' class="Slider" src="assets/img/Tecno.png"></a>
         <button class="w3-button w3-display-left" id="botI" onclick="plusDivs(-1)">&#10094;</button>
         <button class="w3-button w3-display-right" id="botD" onclick="plusDivs(+1)">&#10095;</button>
     </div>
@@ -199,11 +199,11 @@ setcookie("sorted_playlists", $cookieValue, strtotime("1 day"), "/");
                 <div class="equalizer__bar"></div>
                 <div class="equalizer__bar"></div>
             </div>
-            <img id="random" src="../assets/img/random.png">
-            <img id="backward" src="../assets/img/backward.png">
-            <img id="play" src="../assets/img/play.png">
-            <img id="forward" src="../assets/img/forward.png">
-            <img id="stop" src="../assets/img/stop.png">
+            <img id="random" src="assets/img/random.png">
+            <img id="backward" src="assets/img/backward.png">
+            <img id="play" src="assets/img/play.png">
+            <img id="forward" src="assets/img/forward.png">
+            <img id="stop" src="assets/img/stop.png">
             <audio id="audio" ontimeupdate="updateTimeDisplay(this)">
                 <source src="" type="audio/mp3">
             </audio>
@@ -212,9 +212,9 @@ setcookie("sorted_playlists", $cookieValue, strtotime("1 day"), "/");
             </div>
             <div id="duration">0:00 / 0:00</div>
             <div>
-                <a href="upload.php"><p>Upload Song</p></a>
+                <a href="codi/upload.php"><p>Upload Song</p></a>
             </div>
-            <script src="gramola.js"></script>
+            <script src="codi/gramola.js"></script>
         </footer>
         <script>
             // Verifica si s'ha especificat playlist_id a la URL

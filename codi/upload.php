@@ -26,7 +26,7 @@
     <input type="text" name="cover" id="cover" required>
     <button type="submit">Pujar canço</button>
 </form>
-<a href="index.php"><p>Tornar</p></a>
+<a href="../index.php"><p>Tornar</p></a>
 </body>
 <script src="gramola.js"></script>
 </html>

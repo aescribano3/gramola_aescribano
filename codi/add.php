@@ -54,5 +54,5 @@ if (isset($_FILES["url"]) && $_FILES["url"]["error"] === UPLOAD_ERR_OK) {
     file_put_contents($files[$playlistId], $cançonsJSON);
 }
 
-header("Location: index.php?playlist_id={$playlistId}");
+header("Location: ../index.php?playlist_id={$playlistId}");
 ?>
