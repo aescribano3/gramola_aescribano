@@ -149,6 +149,7 @@ setcookie("sorted_playlists", $cookieValue, strtotime("1 day"), "/");
                 </div>
             </form>
         <?php endif; ?>
+        <!-- Quan s'ha iniciat sessió mostra la opció per verure la informatció tecnica -->
         <?php if($loggedIn): ?>
                 <a href="codi/informacioTecnica.php"><p>Informació Tecnica</p></a>
             <?php endif; ?>
